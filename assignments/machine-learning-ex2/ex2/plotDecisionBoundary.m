@@ -1,4 +1,4 @@
-function plotDecisionBoundary(theta, X, y)
+function plotDecisionBoundary(theta, X, y, lambda, color, linestyle)
 %PLOTDECISIONBOUNDARY Plots the data points X and y into a new figure with
 %the decision boundary defined by theta
 %   PLOTDECISIONBOUNDARY(theta, X,y) plots the data points with + for the 
@@ -9,9 +9,10 @@ function plotDecisionBoundary(theta, X, y)
 %   2) MxN, N>3 matrix, where the first column is all-ones
 
 % Plot Data
-plotData(X(:,2:3), y);
-hold on
+%plotData(X(:,2:3), y);
+%hold on
 
+fprintf('Plotting decision boundary for lambda=%f (color: %c)\n', lambda, color);
 if size(X, 2) <= 3
     % Only need 2 points to define a line, so choose two endpoints
     plot_x = [min(X(:,2))-2,  max(X(:,2))+2];
@@ -21,7 +22,7 @@ if size(X, 2) <= 3
 
     % Plot, and adjust axes for better viewing
     plot(plot_x, plot_y)
-    
+
     % Legend, specific for the exercise
     legend('Admitted', 'Not admitted', 'Decision Boundary')
     axis([30, 100, 30, 100])
@@ -41,8 +42,8 @@ else
 
     % Plot z = 0
     % Notice you need to specify the range [0, 0]
-    contour(u, v, z, [0, 0], 'LineWidth', 2)
+    contour(u, v, z, [0, 0], 'LineWidth', 2, 'linecolor', color, 'linestyle', linestyle)
 end
-hold off
+%hold off
 
 end

@@ -106,8 +106,11 @@ fprintf(' %f \n', theta);
 fprintf('Expected theta (approx):\n');
 fprintf(' -25.161\n 0.206\n 0.201\n');
 
+% Plog Data
+plotData(X(:,2:3), y);
+
 % Plot Boundary
-plotDecisionBoundary(theta, X, y);
+plotDecisionBoundary(theta, X, y, 0.0, 'k', '-');
 
 % Put some labels 
 hold on;
