@@ -28,13 +28,11 @@ X = [ones(m, 1) X];
 %       max element, for more information see 'help max'. If your examples 
 %       are in rows, then, you can use max(A, [], 2) to obtain the max 
 %       for each row.
-%       
+%
 
-
-
-
-
-
+h = X * all_theta';
+[probability_of_digit, digit] = max(h, [], 2); % returns [max_value, max_idx]
+p = digit;
 
 % =========================================================================
 

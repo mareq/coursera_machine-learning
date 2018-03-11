@@ -27,8 +27,7 @@ X = [ones(m, 1) X];
 % Hint: You can use y == c to obtain a vector of 1's and 0's that tell you
 %       whether the ground truth is true/false for this class.
 %
-% Note: For this assignment, we recommend using fmincg to optimize the cost
-%       function. It is okay to use a for-loop (for c = 1:num_labels) to
+% Note: For this assignment, we recommend using fmincg to optimize the cost %       function. It is okay to use a for-loop (for c = 1:num_labels) to
 %       loop over the different classes.
 %
 %       fmincg works similarly to fminunc, but is more efficient when we
@@ -49,16 +48,12 @@ X = [ones(m, 1) X];
 %                 initial_theta, options);
 %
 
-
-
-
-
-
-
-
-
-
-
+initial_theta = zeros(n + 1, 1);
+options = optimset('GradObj', 'on', 'MaxIter', 50);
+for c = 1:num_labels
+  [all_theta(c, :)] = ...
+    fmincg (@(t)(lrCostFunction(t, X, (y == c), lambda)), initial_theta, options);
+end
 
 % =========================================================================
 
