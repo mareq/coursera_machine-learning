@@ -71,7 +71,7 @@ else
         end
     end
 end
-K
+% K
 
 % Train
 fprintf('\nTraining ...');

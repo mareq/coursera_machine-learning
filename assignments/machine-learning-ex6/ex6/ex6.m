@@ -21,102 +21,102 @@ clear ; close all; clc
 
 %% =============== Part 0: SVM Toy Examples ================
 
-fprintf('Simple 3-point example ...\n')
-X = [ -1, 0; 0, -0.5; -0.6, -1.2 ]
-y = [ 0; 0; 1 ]
-C = 1000
-sigma = 1
-fprintf('\nTraining SVM using linear kernel ...\n')
-model = svmTrain(X, y, C, @linearKernel, 1e-3, 20)
-visualizeBoundary(X, y, model);
-fprintf('Simple 3-point example, linear kernel\n');
-fprintf('Program paused. Press enter to continue.\n');
-pause;
-fprintf('\nTraining SVM using gaussian kernel ...\n')
-model = svmTrain(X, y, C, @(x1, x2) gaussianKernel(x1, x2, sigma));
-visualizeBoundary(X, y, model);
-fprintf('Simple 3-point example, gaussian kernel\n');
-fprintf('Program paused. Press enter to continue.\n');
-pause;
-fprintf('\nTraining SVM using gaussian kernel (inverted y) ...\n')
-
-fprintf('Simple 4-point example ...\n')
-X = [ 1, 1; 1, -1; -1, -1; -1, 1 ]
-y = [ 0; 1; 1; 0 ]
-C = 1000
-sigma = 1
-fprintf('\nTraining SVM using linear kernel ...\n')
-model = svmTrain(X, y, C, @linearKernel, 1e-3, 20)
-visualizeBoundary(X, y, model);
-fprintf('Simple 4-point example, linear kernel\n');
-fprintf('Program paused. Press enter to continue.\n');
-pause;
-fprintf('\nTraining SVM using gaussian kernel ...\n')
-model = svmTrain(X, y, C, @(x1, x2) gaussianKernel(x1, x2, sigma));
-visualizeBoundary(X, y, model);
-fprintf('Simple 4-point example, gaussian kernel\n');
-fprintf('Program paused. Press enter to continue.\n');
-pause;
-
-fprintf('Linearly inseparable 4-point example ...\n')
-X = [ 1, 1; 1, -1; -1, -1; -1, 1 ]
-y = [ 0; 1; 0; 1 ]
-C = 1000
-sigma = 1
-fprintf('\nTraining SVM using linear kernel ...\n')
-model = svmTrain(X, y, C, @linearKernel, 1e-3, 20)
-visualizeBoundary(X, y, model);
-fprintf('Linearly inseparable 4-point example, linear kernel\n');
-fprintf('Program paused. Press enter to continue.\n');
-pause;
-fprintf('\nTraining SVM using gaussian kernel ...\n')
-model = svmTrain(X, y, C, @(x1, x2) gaussianKernel(x1, x2, sigma));
-visualizeBoundary(X, y, model);
-fprintf('Linearly inseparable 4-point example, gaussian kernel\n');
-fprintf('Program paused. Press enter to continue.\n');
-pause;
-
-fprintf('Example separable by hyperbola ...\n')
-X = [ 0, 3; 1, 2; 2, 1; 3, 0 ]
-y = [ 0; 1; 1; 0 ]
-C = 1000
-sigma = 1
-fprintf('\nTraining SVM using linear kernel ...\n')
-model = svmTrain(X, y, C, @linearKernel, 1e-3, 20)
-visualizeBoundary(X, y, model);
-fprintf('Example separable by hyperbola, linear kernel\n');
-fprintf('Program paused. Press enter to continue.\n');
-pause;
-fprintf('\nTraining SVM using non-linear kernel ...\n')
-model = svmTrain(X, y, C, @nonLinearKernel, 1e-3, 20)
-visualizeBoundary(X, y, model);
-fprintf('Example separable by hyperbola, non-linear kernel\n');
-fprintf('Program paused. Press enter to continue.\n');
-pause;
-fprintf('\nTraining SVM using gaussian kernel ...\n')
-model = svmTrain(X, y, C, @(x1, x2) gaussianKernel(x1, x2, sigma));
-visualizeBoundary(X, y, model);
-fprintf('Example separable by hyperbola, gaussian kernel\n');
-fprintf('Program paused. Press enter to continue.\n');
-pause;
-
-fprintf('Example from in-video quiz ...\n')
-X = [ -3, 2; -3, -1; -2, 1; 2, 1; 2, -1; 3, 2; 3, -2 ]
-y = [ 0; 0; 0; 1; 1; 1; 1 ]
-C = 1000
-sigma = 1
-fprintf('\nTraining SVM using linear kernel ...\n')
-model = svmTrain(X, y, C, @linearKernel, 1e-3, 20)
-visualizeBoundary(X, y, model);
-fprintf('Example from in-video quiz, linear kernel\n');
-fprintf('Program paused. Press enter to continue.\n');
-pause;
-fprintf('\nTraining SVM using gaussian kernel ...\n')
-model = svmTrain(X, y, C, @(x1, x2) gaussianKernel(x1, x2, sigma));
-visualizeBoundary(X, y, model);
-fprintf('Example from in-video quiz, gaussian kernel\n');
-fprintf('Program paused. Press enter to continue.\n');
-pause;
+% fprintf('Simple 3-point example ...\n')
+% X = [ -1, 0; 0, -0.5; -0.6, -1.2 ]
+% y = [ 0; 0; 1 ]
+% C = 1000
+% sigma = 1
+% fprintf('\nTraining SVM using linear kernel ...\n')
+% model = svmTrain(X, y, C, @linearKernel, 1e-3, 20)
+% visualizeBoundary(X, y, model);
+% fprintf('Simple 3-point example, linear kernel\n');
+% fprintf('Program paused. Press enter to continue.\n');
+% pause;
+% fprintf('\nTraining SVM using gaussian kernel ...\n')
+% model = svmTrain(X, y, C, @(x1, x2) gaussianKernel(x1, x2, sigma));
+% visualizeBoundary(X, y, model);
+% fprintf('Simple 3-point example, gaussian kernel\n');
+% fprintf('Program paused. Press enter to continue.\n');
+% pause;
+% fprintf('\nTraining SVM using gaussian kernel (inverted y) ...\n')
+%
+% fprintf('Simple 4-point example ...\n')
+% X = [ 1, 1; 1, -1; -1, -1; -1, 1 ]
+% y = [ 0; 1; 1; 0 ]
+% C = 1000
+% sigma = 1
+% fprintf('\nTraining SVM using linear kernel ...\n')
+% model = svmTrain(X, y, C, @linearKernel, 1e-3, 20)
+% visualizeBoundary(X, y, model);
+% fprintf('Simple 4-point example, linear kernel\n');
+% fprintf('Program paused. Press enter to continue.\n');
+% pause;
+% fprintf('\nTraining SVM using gaussian kernel ...\n')
+% model = svmTrain(X, y, C, @(x1, x2) gaussianKernel(x1, x2, sigma));
+% visualizeBoundary(X, y, model);
+% fprintf('Simple 4-point example, gaussian kernel\n');
+% fprintf('Program paused. Press enter to continue.\n');
+% pause;
+%
+% fprintf('Linearly inseparable 4-point example ...\n')
+% X = [ 1, 1; 1, -1; -1, -1; -1, 1 ]
+% y = [ 0; 1; 0; 1 ]
+% C = 1000
+% sigma = 1
+% fprintf('\nTraining SVM using linear kernel ...\n')
+% model = svmTrain(X, y, C, @linearKernel, 1e-3, 20)
+% visualizeBoundary(X, y, model);
+% fprintf('Linearly inseparable 4-point example, linear kernel\n');
+% fprintf('Program paused. Press enter to continue.\n');
+% pause;
+% fprintf('\nTraining SVM using gaussian kernel ...\n')
+% model = svmTrain(X, y, C, @(x1, x2) gaussianKernel(x1, x2, sigma));
+% visualizeBoundary(X, y, model);
+% fprintf('Linearly inseparable 4-point example, gaussian kernel\n');
+% fprintf('Program paused. Press enter to continue.\n');
+% pause;
+%
+% fprintf('Example separable by hyperbola ...\n')
+% X = [ 0, 3; 1, 2; 2, 1; 3, 0 ]
+% y = [ 0; 1; 1; 0 ]
+% C = 1000
+% sigma = 1
+% fprintf('\nTraining SVM using linear kernel ...\n')
+% model = svmTrain(X, y, C, @linearKernel, 1e-3, 20)
+% visualizeBoundary(X, y, model);
+% fprintf('Example separable by hyperbola, linear kernel\n');
+% fprintf('Program paused. Press enter to continue.\n');
+% pause;
+% fprintf('\nTraining SVM using non-linear kernel ...\n')
+% model = svmTrain(X, y, C, @nonLinearKernel, 1e-3, 20)
+% visualizeBoundary(X, y, model);
+% fprintf('Example separable by hyperbola, non-linear kernel\n');
+% fprintf('Program paused. Press enter to continue.\n');
+% pause;
+% fprintf('\nTraining SVM using gaussian kernel ...\n')
+% model = svmTrain(X, y, C, @(x1, x2) gaussianKernel(x1, x2, sigma));
+% visualizeBoundary(X, y, model);
+% fprintf('Example separable by hyperbola, gaussian kernel\n');
+% fprintf('Program paused. Press enter to continue.\n');
+% pause;
+%
+% fprintf('Example from in-video quiz ...\n')
+% X = [ -3, 2; -3, -1; -2, 1; 2, 1; 2, -1; 3, 2; 3, -2 ]
+% y = [ 0; 0; 0; 1; 1; 1; 1 ]
+% C = 1000
+% sigma = 1
+% fprintf('\nTraining SVM using linear kernel ...\n')
+% model = svmTrain(X, y, C, @linearKernel, 1e-3, 20)
+% visualizeBoundary(X, y, model);
+% fprintf('Example from in-video quiz, linear kernel\n');
+% fprintf('Program paused. Press enter to continue.\n');
+% pause;
+% fprintf('\nTraining SVM using gaussian kernel ...\n')
+% model = svmTrain(X, y, C, @(x1, x2) gaussianKernel(x1, x2, sigma));
+% visualizeBoundary(X, y, model);
+% fprintf('Example from in-video quiz, gaussian kernel\n');
+% fprintf('Program paused. Press enter to continue.\n');
+% pause;
 
 %% =============== Part 1: Loading and Visualizing Data ================
 %  We start the exercise by first loading and visualizing the dataset. 
