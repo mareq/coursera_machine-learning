@@ -10,6 +10,9 @@ function centroids = computeCentroids(X, idx, K)
 %   assigned to it.
 %
 
+%X=X(1:8,:)
+%idx=idx(1:size(X,1),:)
+
 % Useful variables
 [m n] = size(X);
 
@@ -27,11 +30,11 @@ centroids = zeros(K, n);
 %
 
 
-
-
-
-
-
+for k = 1:K
+  if sum(idx == k) > 0
+    centroids(k, :) = mean(X((idx == k), :));
+  end
+end
 
 % =============================================================
 
